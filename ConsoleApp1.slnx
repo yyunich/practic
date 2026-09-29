@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Module1_1/Module1_1.csproj" />
+  <Project Path="module1_2/Module1_2.csproj" />
+  <Project Path="Module1_3/Module1_3.csproj" Id="c825b8f8-7c10-451d-85bf-40b325728c4d" />
+</Solution>
