@@ -121,7 +121,6 @@ class Ex2
         Circle circle = new Circle(5);
         Rectangle rect = new Rectangle(4, 6);
 
-        // Выводим информацию
         Console.WriteLine("========== ФИГУРЫ ==========\n");
 
         circle.PrintInfo();
