@@ -1,5 +1,4 @@
 ﻿using System;
-
     class Person
     {
         private string name;
