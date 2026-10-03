@@ -3,4 +3,5 @@
   <Project Path="module1_2/Module1_2.csproj" />
   <Project Path="Module1_3/Module1_3.csproj" Id="c825b8f8-7c10-451d-85bf-40b325728c4d" />
   <Project Path="Module_2/Module_2/Module_2.csproj" />
+  <Project Path="Module_3/Module_3.csproj" Id="9731e9c5-c0e8-43e0-881a-4e87e61bdab3" />
 </Solution>
