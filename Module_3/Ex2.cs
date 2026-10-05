@@ -31,7 +31,7 @@ class Ex2
     {
         PhoneNotification phone = new PhoneNotification();
 
-        phone.SendMessage("Привет! Как дела в колледже? =)");
+        phone.SendMessage("Привет! Как дела в колледже?");
         phone.SendCall("+375 (33) 333-33-33");
         phone.SendEmail("Кураторский час в 15:00");
     }
