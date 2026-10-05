@@ -31,10 +31,6 @@ class Ex2
     {
         PhoneNotification phone = new PhoneNotification();
 
-        phone.MessageReceived += text => Console.WriteLine($"SMS: {text}");
-        phone.CallReceived += from => Console.WriteLine($"Входящий звонок: {from}");
-        phone.EmailReceived += subject => Console.WriteLine($"EMAIL: {subject}");
-
         phone.SendMessage("Привет! Как дела в колледже? =)");
         phone.SendCall("+375 (33) 333-33-33");
         phone.SendEmail("Кураторский час в 15:00");
