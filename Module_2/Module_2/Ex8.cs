@@ -1,6 +1,5 @@
-﻿using System; // Подключение пространства имён System (Console, Math)
+﻿using System;
 
-// ==================== АБСТРАКТНЫЙ БАЗОВЫЙ КЛАСС ====================
 // abstract означает, что нельзя создать объект new Shap() —
 // класс существует только как "шаблон" для наследников.
 abstract class Shap
@@ -22,7 +21,6 @@ abstract class Shap
     }
 }
 
-// ==================== НАСЛЕДНИК: КРУГ ====================
 // Circ наследует Shap — обязан реализовать оба абстрактных метода
 class Circ : Shap
 {
@@ -37,7 +35,6 @@ class Circ : Shap
     public override double Perimeter() { return 2 * Math.PI * r; }   // P = 2·π·r
 }
 
-// ==================== НАСЛЕДНИК: ПРЯМОУГОЛЬНИК ====================
 class Rectang : Shap
 {
     private double w, h; // Ширина и высота
@@ -48,7 +45,6 @@ class Rectang : Shap
     public override double Perimeter() { return 2 * (w + h); }   // P = 2·(a+b)
 }
 
-// ==================== НАСЛЕДНИК: ТРЕУГОЛЬНИК ====================
 class Triang : Shap
 {
     private double a, b, c; // Три стороны
@@ -68,7 +64,6 @@ class Triang : Shap
     public override double Perimeter() { return a + b + c; } // Сумма сторон
 }
 
-// ==================== ТОЧКА ВХОДА ====================
 class Ex8
 {
     static void Main()
