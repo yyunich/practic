@@ -1,11 +1,13 @@
 ﻿using System;
 
-// Делегат для метода сортировки
+// Делегат для метода сортировки: принимает массив int[], ничего не возвращает.
+// Любой метод с такой сигнатурой подойдёт (пузырёк, вставки, выбор и т.д.).
 delegate void SortMethod(int[] array);
 
 class Ex5
 {
-    // Сортировка пузырьком
+    // Сортировка пузырьком: соседние элементы меняются местами, если стоят не по порядку.
+    // Внешний цикл — количество проходов, внутренний — сравнения в текущем проходе.
     static void BubbleSort(int[] array)
     {
         for (int i = 0; i < array.Length - 1; i++)
@@ -14,6 +16,7 @@ class Ex5
             {
                 if (array[j] > array[j + 1])
                 {
+                    // Обмен двух соседних элементов.
                     int temp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
@@ -22,7 +25,7 @@ class Ex5
         }
     }
 
-    // Вывод массива
+    // Вывод массива в одну строку через пробел.
     static void PrintArray(int[] array)
     {
         for (int i = 0; i < array.Length; i++)
@@ -32,19 +35,19 @@ class Ex5
 
     static void Main()
     {
-        // Ввод размера массива
+        // Запрос размера массива.
         Console.Write("Введите размер массива N: ");
         int n = int.Parse(Console.ReadLine());
 
-        // Создаём массив
+        // Создание массива и генератора случайных чисел.
         int[] array = new int[n];
         Random random = new Random();
 
-        // Заполняем случайными числами
+        // Заполнение случайными числами от 1 до 99.
         for (int i = 0; i < n; i++)
             array[i] = random.Next(1, 100);
 
-        // Вывод исходного массива
+        // Показ исходного массива.
         Console.WriteLine("\n=== ИСХОДНЫЙ МАССИВ ===");
         PrintArray(array);
 
@@ -56,6 +59,7 @@ class Ex5
             Console.WriteLine("3. Выход");
             Console.Write("Выбор: ");
 
+            // Безопасный ввод номера пункта меню.
             int choice;
             if (!int.TryParse(Console.ReadLine(), out choice))
             {
@@ -69,35 +73,40 @@ class Ex5
                 break;
             }
 
-            // Выбор делегата через switch
+            // Переменная-делегат: сюда будет сохранён выбранный метод сортировки.
             SortMethod sort = null;
-            string methodName = "";
+            string methodName = ""; // название для вывода
 
             switch (choice)
             {
+                // Выбор сортировки пузырьком.
                 case 1:
-                    sort = BubbleSort;
+                    sort = BubbleSort; // присваиваем метод делегату
                     methodName = "Сортировка пузырьком";
                     break;
+
+                // Пункт 2 — просто показать текущий массив и вернуться в меню.
                 case 2:
                     Console.WriteLine("\nТекущий массив:");
                     PrintArray(array);
                     Console.WriteLine("\nНажмите Enter...");
                     Console.ReadLine();
-                    continue;
+                    continue; // возвращаемся в начало while
+
                 default:
                     Console.WriteLine("Неверный пункт меню.");
                     continue;
             }
 
-            // Замер времени
+            // Замер времени выполнения сортировки.
             DateTime start = DateTime.Now;
-            sort(array);   // вызов делегата
+            sort(array);   // вызов метода через делегат
             DateTime end = DateTime.Now;
 
+            // Разница во времени в миллисекундах.
             double ms = (end - start).TotalMilliseconds;
 
-            // Вывод результата
+            // Вывод результата и затраченного времени.
             Console.WriteLine($"\n--- {methodName} ---");
             Console.WriteLine("Отсортированный массив:");
             PrintArray(array);
