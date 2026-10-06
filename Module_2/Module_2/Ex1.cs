@@ -1,4 +1,4 @@
-﻿using System; // Подключение пространства имён System для использования Console
+﻿using System;
 
 // Класс Person описывает человека с именем, возрастом и адресом
 class Person
