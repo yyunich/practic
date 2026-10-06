@@ -84,7 +84,7 @@ class Ex3
                         taskNames[count] = name;
                         handlers[count] = handler;
                         count++;
-                        Console.WriteLine($"✓ Задача «{name}» добавлена");
+                        Console.WriteLine($"Задача «{name}» добавлена");
                     }
                     break;
 
