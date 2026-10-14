@@ -13,7 +13,7 @@ class Canvas : IDrawing
 {
     public void DrawLine(int x1, int y1, int x2, int y2)
     {
-        Console.WriteLine($"  Линия: ({x1},{y1}) → ({x2},{y2})");
+        Console.WriteLine($"  Линия: ({x1},{y1}) -->> ({x2},{y2})");
     }
 
     public void DrawCircle(int x, int y, int r)
