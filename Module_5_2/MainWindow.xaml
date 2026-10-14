@@ -1,0 +1,58 @@
+﻿<Window x:Class="Module_5_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Текстовый редактор" Height="600" Width="900"
+        WindowStartupLocation="CenterScreen">
+
+    <DockPanel>
+        <!-- Меню -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Открыть..." Click="MenuOpen_Click"
+                          InputGestureText="Ctrl+O"/>
+                <MenuItem Header="Сохранить" Click="MenuSave_Click"
+                          InputGestureText="Ctrl+S"/>
+                <MenuItem Header="Сохранить как..." Click="MenuSaveAs_Click"/>
+                <Separator/>
+                <MenuItem Header="Выход" Click="MenuExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Правка">
+                <MenuItem Header="Отменить" Click="MenuUndo_Click"
+                          InputGestureText="Ctrl+Z"/>
+                <MenuItem Header="Повторить" Click="MenuRedo_Click"
+                          InputGestureText="Ctrl+Y"/>
+                <Separator/>
+                <MenuItem Header="Вырезать" Click="MenuCut_Click"
+                          InputGestureText="Ctrl+X"/>
+                <MenuItem Header="Копировать" Click="MenuCopy_Click"
+                          InputGestureText="Ctrl+C"/>
+                <MenuItem Header="Вставить" Click="MenuPaste_Click"
+                          InputGestureText="Ctrl+V"/>
+                <Separator/>
+                <MenuItem Header="Выделить всё" Click="MenuSelectAll_Click"
+                          InputGestureText="Ctrl+A"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- Строка состояния -->
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock x:Name="lblFile" Text="Без имени"/>
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right">
+                <TextBlock x:Name="lblChars" Text="Символов: 0"/>
+            </StatusBarItem>
+        </StatusBar>
+
+        <!-- Текстовое поле -->
+        <TextBox x:Name="txtEditor"
+                 AcceptsReturn="True"
+                 TextWrapping="NoWrap"
+                 VerticalScrollBarVisibility="Auto"
+                 HorizontalScrollBarVisibility="Auto"
+                 FontFamily="Consolas"
+                 FontSize="14"
+                 Padding="5"
+                 TextChanged="TxtEditor_TextChanged"/>
+    </DockPanel>
+</Window>

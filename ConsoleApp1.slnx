@@ -1,8 +1,17 @@
 <Solution>
+  <Project Path="Mdule_6_2/Module_6_2.csproj" Id="bb2d301a-be59-4b82-8462-9e43ffc9f3ad" />
   <Project Path="Module1_1/Module1_1.csproj" />
   <Project Path="module1_2/Module1_2.csproj" />
   <Project Path="Module1_3/Module1_3.csproj" Id="c825b8f8-7c10-451d-85bf-40b325728c4d" />
   <Project Path="Module_2/Module_2/Module_2.csproj" />
   <Project Path="Module_3/Module_3.csproj" Id="9731e9c5-c0e8-43e0-881a-4e87e61bdab3" />
   <Project Path="Module_4/Module_4.csproj" Id="d666eb09-d314-4497-8c2b-616bec5f8e8d" />
+  <Project Path="Module_5_1/Module_5_1.csproj" Id="28f9d1fa-0330-47f7-88ad-6f7b2ee7624f" />
+  <Project Path="Module_5_2/Module_5_2.csproj" Id="6e753858-37b3-4489-a2f4-c5ba13d4353a" />
+  <Project Path="Module_5_3/Module_5_3.csproj" Id="98f84794-a86e-429a-8840-626ab69fbb39" />
+  <Project Path="Module_5_4/Module_5_4.csproj" Id="9393cec7-a119-4de0-b2ba-6be194627972" />
+  <Project Path="Module_5_5/Module_5_5.csproj" Id="4e3ba13d-2498-4104-9723-d14a86febedb" />
+  <Project Path="Module_6_1/Module_6_1.csproj" Id="cdd200b8-5b7a-42b0-b703-c52440b672b7" />
+  <Project Path="Module_6_3/Module_6_3.csproj" Id="406f238d-c6bd-431d-97d0-b090d14f4d38" />
+  <Project Path="Module_6_4/Module_6_4.csproj" Id="bdcb4b23-3df3-4129-bea6-7fa57826f1a6" />
 </Solution>
