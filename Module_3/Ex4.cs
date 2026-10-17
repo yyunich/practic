@@ -97,7 +97,6 @@ class Ex4
             else
                 Console.WriteLine($"\nВсего найдено: {found}");
 
-            // Пауза, чтобы пользователь успел прочитать результат.
             Console.WriteLine("\nНажмите Enter, чтобы вернуться в меню...");
             Console.ReadLine();
         }
