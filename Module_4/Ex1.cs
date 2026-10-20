@@ -18,7 +18,7 @@ class Circle : IShape
 class Rectangle : IShape
 {
     private double w, h;
-    public Rectangle(double w, double h) { this.w = w; this.h = h; }
+    public Rectangle(double w, double h) { this.w = w; this.h = h; }    
 
     public double Area() { return w * h; }
     public double Perimeter() { return 2 * (w + h); }
