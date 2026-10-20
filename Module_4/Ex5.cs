@@ -1,14 +1,12 @@
 ﻿using System;
 
-// Интерфейс "Рисунок"
 interface IDrawing
 {
-    void DrawLine(int x1, int y1, int x2, int y2);   // линия
-    void DrawCircle(int x, int y, int r);            // круг
-    void DrawRectangle(int x, int y, int w, int h);  // прямоугольник
+    void DrawLine(int x1, int y1, int x2, int y2);
+    void DrawCircle(int x, int y, int r);
+    void DrawRectangle(int x, int y, int w, int h);
 }
 
-// Класс "Холст" — реализует интерфейс
 class Canvas : IDrawing
 {
     public void DrawLine(int x1, int y1, int x2, int y2)
@@ -31,16 +29,15 @@ class Ex5
 {
     static void Main()
     {
-        // Создаём холст через интерфейс
         IDrawing canvas = new Canvas();
 
         Console.WriteLine("=== РИСУЕМ НА ХОЛСТЕ ===\n");
 
         Console.WriteLine("Рисуем домик:");
-        canvas.DrawRectangle(100, 200, 80, 60);   // стены
-        canvas.DrawLine(100, 200, 140, 150);      // крыша (левая)
-        canvas.DrawLine(140, 150, 180, 200);      // крыша (правая)
-        canvas.DrawRectangle(125, 230, 20, 30);   // дверь
+        canvas.DrawRectangle(100, 200, 80, 60);
+        canvas.DrawLine(100, 200, 140, 150);
+        canvas.DrawLine(140, 150, 180, 200);
+        canvas.DrawRectangle(125, 230, 20, 30);
 
         Console.WriteLine("\nРисуем солнце:");
         canvas.DrawCircle(300, 100, 40);

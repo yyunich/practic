@@ -1,13 +1,12 @@
 ﻿using System;
 
-// Интерфейс "Товар" — что должен уметь любой товар
 interface IProduct
 {
-    double GetCost();   // стоимость партии
-    int GetStock();     // остаток на складе
+    double GetCost();
+    int GetStock();
 }
 
-// Хлеб: цена × количество
+// Хлеб: цена x количество
 class Bread : IProduct
 {
     public double Price; public int Stock;
@@ -15,7 +14,7 @@ class Bread : IProduct
     public int GetStock() => Stock;
 }
 
-// Молоко: цена × объём × количество
+// Молоко: цена x объём x количество
 class Milk : IProduct
 {
     public double Price, Volume; public int Stock;
@@ -23,7 +22,7 @@ class Milk : IProduct
     public int GetStock() => Stock;
 }
 
-// Сыр: цена × вес × количество
+// Сыр: цена x вес x количество
 class Cheese : IProduct
 {
     public double Price, Weight; public int Stock;

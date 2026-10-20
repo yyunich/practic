@@ -1,13 +1,11 @@
 ﻿using System;
 
-// Интерфейс "Книга"
 interface IBook
 {
-    bool IsAvailable();   // доступна ли книга
-    void Borrow();        // выдать книгу
+    bool IsAvailable();
+    void Borrow();
 }
 
-// Художественная книга
 class Fiction : IBook
 {
     public string Title;
@@ -17,7 +15,6 @@ class Fiction : IBook
     public void Borrow() { Available = false; }
 }
 
-// Учебник
 class Textbook : IBook
 {
     public string Title;
@@ -27,7 +24,6 @@ class Textbook : IBook
     public void Borrow() { Available = false; }
 }
 
-// Научная литература
 class Science : IBook
 {
     public string Title;
@@ -54,7 +50,6 @@ class Ex4
             "Краткая история времени", "Мастер и Маргарита", "Физика"
         };
 
-        // Выводим состояние всех книг
         Console.WriteLine("=== КАТАЛОГ БИБЛИОТЕКИ ===\n");
         for (int i = 0; i < books.Length; i++)
         {
@@ -62,14 +57,12 @@ class Ex4
             Console.WriteLine($"{titles[i]}: {status}");
         }
 
-        // Выдаём две книги
         Console.WriteLine("\n=== ВЫДАЧА КНИГ ===");
         books[0].Borrow();
         books[3].Borrow();
         Console.WriteLine($"Выдано: {titles[0]}");
         Console.WriteLine($"Выдано: {titles[3]}");
 
-        // Проверяем состояние после выдачи
         Console.WriteLine("\n=== КАТАЛОГ ПОСЛЕ ВЫДАЧИ ===\n");
         for (int i = 0; i < books.Length; i++)
         {

@@ -1,13 +1,11 @@
 ﻿using System;
 
-// Интерфейс "Студент"
 interface IStudent
 {
-    double GetAverage();   // средний балл
-    int GetCourse();       // курс
+    double GetAverage(); 
+    int GetCourse(); 
 }
 
-// Студент 1 курса
 class FirstYear : IStudent
 {
     public string Name; public double Avg;
@@ -15,7 +13,6 @@ class FirstYear : IStudent
     public int GetCourse() => 1;
 }
 
-// Студент 2 курса
 class SecondYear : IStudent
 {
     public string Name; public double Avg;
@@ -23,7 +20,6 @@ class SecondYear : IStudent
     public int GetCourse() => 2;
 }
 
-// Студент 3 курса
 class ThirdYear : IStudent
 {
     public string Name; public double Avg;

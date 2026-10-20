@@ -1,6 +1,5 @@
 ﻿using System;
 
-// Интерфейс
 interface IShape
 {
     double Area();
