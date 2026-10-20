@@ -102,7 +102,6 @@
                 <DataGridTextColumn Header="Тип" 
                                     Binding="{Binding TypeDisplay}" 
                                     Width="100"/>
-
                 <DataGridTextColumn Header="Сумма" 
                                     Binding="{Binding AmountDisplay}" 
                                     Width="120">
