@@ -1,23 +1,23 @@
 ﻿using System;
 
-// Делегат для обработчика задачи: принимает название, ничего не возвращает.
+// Делегат для обработчика задачи: принимает название, ничего не возвращает
 delegate void TaskHandler(string taskName);
 
 class Ex3
 {
-    // Обработчик №1: уведомление о выполнении.
+    // Обработчик №1: уведомление о выполнении
     static void SendNotification(string taskName)
     {
         Console.WriteLine($"Уведомление: задача {taskName} выполнена!");
     }
 
-    // Обработчик №2: запись в журнал с отметкой времени.
+    // Обработчик №2: запись в журнал с отметкой времени
     static void WriteLog(string taskName)
     {
         Console.WriteLine($"Журнал: [{DateTime.Now:HH:mm:ss}] {taskName} -- ОК");
     }
 
-    // Обработчик №3: имитация отправки email.
+    // Обработчик №3: имитация отправки email
     static void SendEmail(string taskName)
     {
         Console.WriteLine($"Почта: задача {taskName} -- отправлена по почте!");
@@ -25,10 +25,10 @@ class Ex3
 
     static void Main()
     {
-        // Параллельные массивы: taskNames[i] — задача, handlers[i] — её обработчик.
+        // Параллельные массивы: taskNames[i] — задача, handlers[i] — её обработчик
         string[] taskNames = new string[15];
         TaskHandler[] handlers = new TaskHandler[15];
-        int count = 0; // количество добавленных задач
+        int count = 0;
 
         while (true)
         {
@@ -41,9 +41,8 @@ class Ex3
 
             switch (choice)
             {
-                // ---------- Добавление задачи ----------
                 case 1:
-                    // Проверка переполнения массива.
+                    // Проверка переполнения массива
                     if (count >= 15)
                     {
                         Console.WriteLine("Список задач выполнен!");
@@ -61,7 +60,6 @@ class Ex3
 
                     TaskHandler handler = null;
 
-                    // Выбор делегата через switch.
                     switch (h)
                     {
                         case 1:
@@ -88,7 +86,6 @@ class Ex3
                     }
                     break;
 
-                // ---------- Выполнение всех задач ----------
                 case 2:
                     if (count == 0)
                     {
@@ -100,11 +97,10 @@ class Ex3
                     for (int i = 0; i < count; i++)
                     {
                         Console.WriteLine($"Задача «{taskNames[i]}»:");
-                        handlers[i](taskNames[i]);   // вызов делегата
+                        handlers[i](taskNames[i]);
                     }
                     break;
 
-                // ---------- Выход ----------
                 case 3:
                     Console.WriteLine("Выход.");
                     return;

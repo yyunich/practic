@@ -1,6 +1,6 @@
 ﻿using System;
 
-// Делегат для метода сортировки: принимает массив int[], ничего не возвращает.
+// Делегат для метода сортировки: принимает массив int[], ничего не возвращает
 delegate void SortMethod(int[] array);
 
 class Ex5
@@ -21,7 +21,7 @@ class Ex5
         }
     }
 
-    // Вывод массива в одну строку через пробел.
+    // Вывод массива в одну строку через пробел
     static void PrintArray(int[] array)
     {
         for (int i = 0; i < array.Length; i++)
@@ -31,19 +31,15 @@ class Ex5
 
     static void Main()
     {
-        // Запрос размера массива.
         Console.Write("Введите размер массива N: ");
         int n = int.Parse(Console.ReadLine());
 
-        // Создание массива и генератора случайных чисел.
         int[] array = new int[n];
         Random random = new Random();
 
-        // Заполнение случайными числами от 1 до 99.
         for (int i = 0; i < n; i++)
             array[i] = random.Next(1, 100);
 
-        // Показ исходного массива.
         Console.WriteLine("\n=== ИСХОДНЫЙ МАССИВ ===");
         PrintArray(array);
 
@@ -55,7 +51,6 @@ class Ex5
             Console.WriteLine("3. Выход");
             Console.Write("Выбор: ");
 
-            // Безопасный ввод номера пункта меню.
             int choice;
             if (!int.TryParse(Console.ReadLine(), out choice))
             {
@@ -69,39 +64,35 @@ class Ex5
                 break;
             }
 
-            // Переменная-делегат: сюда будет сохранён выбранный метод сортировки.
+            // Переменная-делегат: сюда будет сохранён выбранный метод сортировки
             SortMethod sort = null;
-            string methodName = ""; // название для вывода
+            string methodName = "";
 
             switch (choice)
             {
                 case 1:
-                    sort = BubbleSort; // присваиваем метод делегату
+                    sort = BubbleSort;
                     methodName = "Сортировка пузырьком";
                     break;
 
-                // Пункт 2 — просто показать текущий массив и вернуться в меню.
                 case 2:
                     Console.WriteLine("\nТекущий массив:");
                     PrintArray(array);
                     Console.WriteLine("\nНажмите Enter...");
                     Console.ReadLine();
-                    continue; // возвращаемся в начало while
+                    continue;
 
                 default:
                     Console.WriteLine("Неверный пункт меню.");
                     continue;
             }
 
-            // Замер времени выполнения сортировки.
             DateTime start = DateTime.Now;
-            sort(array);   // вызов метода через делегат
+            sort(array);
             DateTime end = DateTime.Now;
 
-            // Разница во времени в миллисекундах.
             double ms = (end - start).TotalMilliseconds;
 
-            // Вывод результата и затраченного времени.
             Console.WriteLine($"\n--- {methodName} ---");
             Console.WriteLine("Отсортированный массив:");
             PrintArray(array);

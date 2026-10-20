@@ -1,13 +1,12 @@
 ﻿using System;
 
-// Делегат-фильтр: принимает строку, возвращает true/false (подходит ли элемент).
+// Делегат-фильтр: принимает строку, возвращает true/false
 delegate bool DataFilter(string item);
 
 class Ex4
 {
     static void Main()
     {
-        // Исходный набор данных — строки формата «дата: описание».
         string[] data = {
             "14.02.2025: Совещание с клиентом",
             "20.12.2024: Отчёт по продажам",
@@ -17,7 +16,6 @@ class Ex4
             "10.11.2024: Анализ конкурентов"
         };
 
-        // Вывод исходных данных.
         Console.WriteLine("=== ИСХОДНЫЕ ДАННЫЕ ===");
         for (int i = 0; i < data.Length; i++)
             Console.WriteLine($"  {data[i]}");
@@ -31,7 +29,6 @@ class Ex4
             Console.WriteLine("4. Выход");
             Console.Write("Выбор: ");
 
-            // Безопасный ввод номера пункта меню.
             int choice;
             if (!int.TryParse(Console.ReadLine(), out choice))
             {
@@ -49,21 +46,18 @@ class Ex4
 
             switch (choice)
             {
-                // Фильтр по ключевому слову (без учёта регистра).
                 case 1:
                     Console.Write("Ключевое слово: ");
                     string keyword = Console.ReadLine();
                     filter = item => item.ToLower().Contains(keyword.ToLower());
                     break;
 
-                // Фильтр по дате: строка должна начинаться с введённой даты.
                 case 2:
                     Console.Write("Дата (ДД.ММ.ГГГГ): ");
                     string date = Console.ReadLine();
                     filter = item => item.StartsWith(date);
                     break;
 
-                // Фильтр по минимальной длине строки.
                 case 3:
                     Console.Write("Минимальная длина: ");
                     int minLength;
@@ -76,10 +70,9 @@ class Ex4
 
                 default:
                     Console.WriteLine("Неверный пункт меню.");
-                    continue; // возвращаемся в начало while
+                    continue;
             }
 
-            // Применяем выбранный фильтр ко всем элементам массива.
             Console.WriteLine("\n--- Результат фильтрации ---");
             int found = 0; // счётчик подходящих элементов
 
