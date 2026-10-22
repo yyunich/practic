@@ -15,4 +15,7 @@
   <Project Path="Module_6_3/Module_6_3.csproj" Id="406f238d-c6bd-431d-97d0-b090d14f4d38" />
   <Project Path="Module_6_4/Module_6_4.csproj" Id="bdcb4b23-3df3-4129-bea6-7fa57826f1a6" />
   <Project Path="Module_8/Module_8.csproj" Id="69f0c8af-8a4f-4b0e-8c25-1950865dec0a" />
+  <Project Path="Module_9_1/Module_9_1.csproj" Id="1b7352eb-f149-42a1-a2dd-195125754e8c" />
+  <Project Path="Module_9_2/Module_9_2.csproj" Id="864641e5-e483-48e1-8cb7-3e59c51485b0" />
+  <Project Path="Module_9_3/Module_9_3.csproj" Id="6e2276ab-7d2a-48d5-853b-2d9e3a7f647d" />
 </Solution>
